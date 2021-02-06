@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace AbstractCarRepairShopViev
 {
-    public partial class Form1 : Form
+    public partial class FormComponent : Form
     {
-        public Form1()
+        public FormComponent()
         {
             InitializeComponent();
         }

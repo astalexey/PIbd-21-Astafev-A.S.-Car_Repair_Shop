@@ -1,7 +1,7 @@
 ﻿
 namespace AbstractCarRepairShopViev
 {
-    partial class Form1
+    partial class FormComponent
     {
         /// <summary>
         /// Обязательная переменная конструктора.
