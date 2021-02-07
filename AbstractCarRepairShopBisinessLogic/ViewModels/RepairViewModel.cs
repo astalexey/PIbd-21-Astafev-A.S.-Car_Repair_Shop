@@ -10,13 +10,13 @@ namespace AbstractCarRepairShopBisinessLogic.ViewModels
     /// <summary>
     /// Изделие, изготавливаемое в магазине
     /// </summary>
-    public class ProductViewModel
+    public class RepairViewModel
     {
         public int Id { get; set; }
-        [DisplayName("Название изделия")]
-        public string ProductName { get; set; }
+        [DisplayName("Название ремонта")]
+        public string RepairName { get; set; }
         [DisplayName("Цена")]
         public decimal Price { get; set; }
-        public Dictionary<int, (string, int)> ProductComponents { get; set; }
+        public Dictionary<int, (string, int)> RepairComponents { get; set; }
     }
 }

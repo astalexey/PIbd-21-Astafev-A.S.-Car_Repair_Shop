@@ -9,11 +9,11 @@ namespace AbstractCarRepairShopBisinessLogic.BindingModels
     /// <summary>
     /// Предоставляемый ремонт в автомастерской
     /// </summary>
-    public class ProductBindingModel
+    public class RepairBindingModel
     {
         public int? Id { get; set; }
-        public string ProductName { get; set; }
+        public string RepairName { get; set; }
         public decimal Price { get; set; }
-        public Dictionary<int, (string, int)> ProductComponents { get; set; }
+        public Dictionary<int, (string, int)> RepairComponents { get; set; }
     }
 }
