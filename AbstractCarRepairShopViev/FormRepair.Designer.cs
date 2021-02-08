@@ -146,6 +146,7 @@ namespace AbstractCarRepairShopViev
             this.dataGridView.Location = new System.Drawing.Point(2, 24);
             this.dataGridView.Name = "dataGridView";
             this.dataGridView.ReadOnly = true;
+            this.dataGridView.RowHeadersVisible = false;
             this.dataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView.Size = new System.Drawing.Size(373, 212);
             this.dataGridView.TabIndex = 0;

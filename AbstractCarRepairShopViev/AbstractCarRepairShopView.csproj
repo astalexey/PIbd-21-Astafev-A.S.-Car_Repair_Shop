@@ -79,6 +79,12 @@
     <Compile Include="FormMain.Designer.cs">
       <DependentUpon>FormMain.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormRepairs.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormRepairs.Designer.cs">
+      <DependentUpon>FormRepairs.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormRepair.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -104,6 +110,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormMain.resx">
       <DependentUpon>FormMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormRepairs.resx">
+      <DependentUpon>FormRepairs.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormRepair.resx">
       <DependentUpon>FormRepair.cs</DependentUpon>
