@@ -34,7 +34,7 @@ namespace AbstractCarRepairShopListImplement
             List<OrderViewModel> result = new List<OrderViewModel>();
             foreach (var order in source.Orders)
             {
-                if (order.OrderId == model.OrderId)
+                if (order.RepairId == model.RepairId)
                 {
                     result.Add(CreateModel(order));
                 }
@@ -49,7 +49,7 @@ namespace AbstractCarRepairShopListImplement
             }
             foreach (var order in source.Orders)
             {
-                if (order.Id == model.Id || order.OrderId == model.OrderId)
+                if (order.Id == model.Id || order.RepairId == model.RepairId)
                 {
                     return CreateModel(order);
                 }
@@ -98,8 +98,8 @@ namespace AbstractCarRepairShopListImplement
         }
         private Order CreateModel(OrderBindingModel model, Order order)
         {
-            order.OrderId = model.OrderId;
-            order.OrderName = model.OrderName;
+            order.RepairId = model.RepairId;
+            order.RepairName = model.RepairName;
             order.Count = model.Count;
             order.Sum = model.Sum;
             order.Status = model.Status;
@@ -113,8 +113,8 @@ namespace AbstractCarRepairShopListImplement
             return new OrderViewModel
             {
                 Id = order.Id,
-                OrderId = order.OrderId,
-                OrderName = order.OrderName,
+                RepairId = order.RepairId,
+                RepairName = order.RepairName,
                 Count = order.Count,
                 Sum = order.Sum,
                 Status = order.Status,

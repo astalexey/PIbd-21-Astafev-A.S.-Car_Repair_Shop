@@ -13,8 +13,8 @@ namespace AbstractCarRepairShopBisinessLogic.BindingModels
     public class OrderBindingModel
     {
         public int? Id { get; set; }
-        public int OrderId { get; set; }
-        public string OrderName { get; set; }
+        public int RepairId { get; set; }
+        public string RepairName { get; set; }
         public int Count { get; set; }
         public decimal Sum { get; set; }
         public OrderStatus Status { get; set; }

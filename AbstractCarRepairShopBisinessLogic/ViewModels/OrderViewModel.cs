@@ -14,9 +14,9 @@ namespace AbstractCarRepairShopBisinessLogic.ViewModels
     public class OrderViewModel
     {
         public int Id { get; set; }
-        public int OrderId { get; set; }
+        public int RepairId { get; set; }
         [DisplayName("Название")]
-        public string OrderName { get; set; }
+        public string RepairName { get; set; }
         [DisplayName("Количество")]
         public int Count { get; set; }
         [DisplayName("Сумма")]

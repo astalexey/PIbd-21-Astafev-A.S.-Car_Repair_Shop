@@ -33,8 +33,8 @@ namespace AbstractCarRepairShopBisinessLogic.BusinessLogics
         {
             _orderStorage.Insert(new OrderBindingModel
             {
-                OrderId = model.RepairId,
-                OrderName = model.RepairName,
+                RepairId = model.RepairId,
+                RepairName = model.RepairName,
                 Count = model.Count,
                 Sum = model.Sum,
                 DateCreate = DateTime.Now,
@@ -55,8 +55,8 @@ namespace AbstractCarRepairShopBisinessLogic.BusinessLogics
             _orderStorage.Update(new OrderBindingModel
             {
                 Id = order.Id,
-                OrderId = order.OrderId,
-                OrderName = order.OrderName,
+                RepairId = order.RepairId,
+                RepairName = order.RepairName,
                 Count = order.Count,
                 Sum = order.Sum,
                 DateCreate = order.DateCreate,
@@ -78,8 +78,8 @@ namespace AbstractCarRepairShopBisinessLogic.BusinessLogics
             _orderStorage.Update(new OrderBindingModel
             {
                 Id = order.Id,
-                OrderId = order.OrderId,
-                OrderName = order.OrderName,
+                RepairId = order.RepairId,
+                RepairName = order.RepairName,
                 Count = order.Count,
                 Sum = order.Sum,
                 DateCreate = order.DateCreate,
@@ -102,8 +102,8 @@ namespace AbstractCarRepairShopBisinessLogic.BusinessLogics
             _orderStorage.Update(new OrderBindingModel
             {
                 Id = order.Id,
-                OrderId = order.OrderId,
-                OrderName = order.OrderName,
+                RepairId = order.RepairId,
+                RepairName = order.RepairName,
                 Count = order.Count,
                 Sum = order.Sum,
                 DateCreate = order.DateCreate,
