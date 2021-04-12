@@ -99,7 +99,7 @@ namespace AbstractCarRepairShopListImplement
         private Order CreateModel(OrderBindingModel model, Order order)
         {
             order.RepairId = model.RepairId;
-            order.RepairName = model.RepairName;
+            order.RepairName = source.Repairs.FirstOrDefault(x => x.Id == order.RepairId)?.RepairName;
             order.Count = model.Count;
             order.Sum = model.Sum;
             order.Status = model.Status;
@@ -114,7 +114,7 @@ namespace AbstractCarRepairShopListImplement
             {
                 Id = order.Id,
                 RepairId = order.RepairId,
-                RepairName = order.RepairName,
+                RepairName = source.Repairs.FirstOrDefault(x => x.Id == order.RepairId)?.RepairName,
                 Count = order.Count,
                 Sum = order.Sum,
                 Status = order.Status,
