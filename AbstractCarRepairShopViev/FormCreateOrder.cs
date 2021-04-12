@@ -86,7 +86,6 @@ namespace AbstractCarRepairShopViev
                 _logicO.CreateOrder(new CreateOrderBindingModel
                 {
                     RepairId = Convert.ToInt32(comboBoxRepair.SelectedValue),
-                    RepairName = comboBoxRepair.Text,
                     Count = Convert.ToInt32(textBoxCount.Text),
                     Sum = Convert.ToDecimal(textBoxSum.Text)
                 });
