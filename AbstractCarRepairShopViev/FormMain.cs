@@ -63,6 +63,17 @@ namespace AbstractCarRepairShopViev
             form.ShowDialog();
             LoadData();
         }
+        private void storehousesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormStoreHouses form = Container.Resolve<FormStoreHouses>();
+            form.ShowDialog();
+        }
+
+        private void storehouseRefillToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormStoreHouseRefill form = Container.Resolve<FormStoreHouseRefill>();
+            form.ShowDialog();
+        }
         private void ButtonTakeOrderInWork_Click(object sender, EventArgs e)
         {
             if (dataGridView.SelectedRows.Count == 1)

@@ -41,22 +41,27 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BindingModels\AddComponentBindingModel.cs" />
     <Compile Include="BindingModels\ChangeStatusBindingModel.cs" />
     <Compile Include="BindingModels\ComponentBindingModels.cs" />
     <Compile Include="BindingModels\CreateOrderBindingModel.cs" />
     <Compile Include="BindingModels\OrderBindingModel.cs" />
     <Compile Include="BindingModels\RepairBindingModel.cs" />
+    <Compile Include="BindingModels\StoreHouseBindingModel.cs" />
     <Compile Include="BusinessLogics\ComponentLogic.cs" />
     <Compile Include="BusinessLogics\OrderLogic.cs" />
     <Compile Include="BusinessLogics\RepairLogic.cs" />
+    <Compile Include="BusinessLogics\StoreHouseLogic.cs" />
     <Compile Include="Enums\OrderStatus.cs" />
     <Compile Include="Interfaces\IComponentStorage.cs" />
     <Compile Include="Interfaces\IOrderStorage.cs" />
     <Compile Include="Interfaces\IRepairStorage.cs" />
+    <Compile Include="Interfaces\IStoreHouseStorage.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ViewModels\ComponentViewModel.cs" />
     <Compile Include="ViewModels\OrderViewModel.cs" />
     <Compile Include="ViewModels\RepairViewModel.cs" />
+    <Compile Include="ViewModels\StoreHouseViewModel.cs" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
