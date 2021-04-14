@@ -33,12 +33,14 @@ namespace AbstractCarRepairShopViev
             this.справочникиToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ремонтToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.компонентыToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.storehousesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.dataGridView = new System.Windows.Forms.DataGridView();
             this.ButtonCreateOrder = new System.Windows.Forms.Button();
             this.ButtonTakeOrderInWork = new System.Windows.Forms.Button();
             this.ButtonOrderReady = new System.Windows.Forms.Button();
             this.ButtonPayOrder = new System.Windows.Forms.Button();
             this.ButtonRef = new System.Windows.Forms.Button();
+            this.storehouseRefillToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
             this.SuspendLayout();
@@ -46,7 +48,8 @@ namespace AbstractCarRepairShopViev
             // menuStrip1
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.справочникиToolStripMenuItem});
+            this.справочникиToolStripMenuItem,
+            this.storehouseRefillToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(803, 24);
@@ -57,6 +60,7 @@ namespace AbstractCarRepairShopViev
             // 
             this.справочникиToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.ремонтToolStripMenuItem,
+            this.storehousesToolStripMenuItem,
             this.компонентыToolStripMenuItem});
             this.справочникиToolStripMenuItem.Name = "справочникиToolStripMenuItem";
             this.справочникиToolStripMenuItem.Size = new System.Drawing.Size(94, 20);
@@ -75,6 +79,13 @@ namespace AbstractCarRepairShopViev
             this.компонентыToolStripMenuItem.Size = new System.Drawing.Size(145, 22);
             this.компонентыToolStripMenuItem.Text = "Компоненты";
             this.компонентыToolStripMenuItem.Click += new System.EventHandler(this.компонентыToolStripMenuItem_Click);
+            // 
+            // storehousesToolStripMenuItem
+            // 
+            this.storehousesToolStripMenuItem.Name = "storehousesToolStripMenuItem";
+            this.storehousesToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.storehousesToolStripMenuItem.Text = "Склады";
+            this.storehousesToolStripMenuItem.Click += new System.EventHandler(this.storehousesToolStripMenuItem_Click);
             // 
             // dataGridView
             // 
@@ -140,6 +151,13 @@ namespace AbstractCarRepairShopViev
             this.ButtonRef.UseVisualStyleBackColor = true;
             this.ButtonRef.Click += new System.EventHandler(this.ButtonRef_Click);
             // 
+            // storehouseRefillToolStripMenuItem
+            // 
+            this.storehouseRefillToolStripMenuItem.Name = "storehouseRefillToolStripMenuItem";
+            this.storehouseRefillToolStripMenuItem.Size = new System.Drawing.Size(129, 20);
+            this.storehouseRefillToolStripMenuItem.Text = "Пополнение склада";
+            this.storehouseRefillToolStripMenuItem.Click += new System.EventHandler(this.storehouseRefillToolStripMenuItem_Click);
+            // 
             // FormMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -176,5 +194,7 @@ namespace AbstractCarRepairShopViev
         private System.Windows.Forms.Button ButtonOrderReady;
         private System.Windows.Forms.Button ButtonPayOrder;
         private System.Windows.Forms.Button ButtonRef;
+        private System.Windows.Forms.ToolStripMenuItem storehousesToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem storehouseRefillToolStripMenuItem;
     }
 }

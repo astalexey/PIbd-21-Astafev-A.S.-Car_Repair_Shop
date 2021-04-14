@@ -30,9 +30,11 @@ namespace AbstractCarRepairShopViev
             currentContainer.RegisterType<IComponentStorage, ComponentStorage>(new HierarchicalLifetimeManager());
             currentContainer.RegisterType<IOrderStorage, OrderStorage>(new HierarchicalLifetimeManager());
             currentContainer.RegisterType<IRepairStorage, RepairStorage>(new HierarchicalLifetimeManager());
+            currentContainer.RegisterType<IStoreHouseStorage, StoreHouseStorage>(new HierarchicalLifetimeManager());
             currentContainer.RegisterType<ComponentLogic>(new HierarchicalLifetimeManager());
             currentContainer.RegisterType<OrderLogic>(new HierarchicalLifetimeManager());
             currentContainer.RegisterType<RepairLogic>(new HierarchicalLifetimeManager());
+            currentContainer.RegisterType<StoreHouseLogic>(new HierarchicalLifetimeManager());
             return currentContainer;
         }
     }

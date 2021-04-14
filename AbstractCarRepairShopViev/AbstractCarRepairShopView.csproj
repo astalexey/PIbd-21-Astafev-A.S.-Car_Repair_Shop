@@ -97,6 +97,24 @@
     <Compile Include="FormRepairComponent.Designer.cs">
       <DependentUpon>FormRepairComponent.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormStoreHouse.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormStoreHouse.Designer.cs">
+      <DependentUpon>FormStoreHouse.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormStoreHouseRefill.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormStoreHouseRefill.Designer.cs">
+      <DependentUpon>FormStoreHouseRefill.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormStoreHouses.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormStoreHouses.Designer.cs">
+      <DependentUpon>FormStoreHouses.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="FormComponent.resx">
@@ -119,6 +137,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormRepairComponent.resx">
       <DependentUpon>FormRepairComponent.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormStoreHouse.resx">
+      <DependentUpon>FormStoreHouse.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormStoreHouseRefill.resx">
+      <DependentUpon>FormStoreHouseRefill.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormStoreHouses.resx">
+      <DependentUpon>FormStoreHouses.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
