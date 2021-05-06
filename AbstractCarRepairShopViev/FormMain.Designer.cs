@@ -33,6 +33,10 @@ namespace AbstractCarRepairShopViev
             this.справочникиToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ремонтToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.компонентыToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.отчетыToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.repairListToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.repairComponentsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.ordersListToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.dataGridView = new System.Windows.Forms.DataGridView();
             this.ButtonCreateOrder = new System.Windows.Forms.Button();
             this.ButtonTakeOrderInWork = new System.Windows.Forms.Button();
@@ -46,7 +50,8 @@ namespace AbstractCarRepairShopViev
             // menuStrip1
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.справочникиToolStripMenuItem});
+            this.справочникиToolStripMenuItem,
+            this.отчетыToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(803, 24);
@@ -75,6 +80,37 @@ namespace AbstractCarRepairShopViev
             this.компонентыToolStripMenuItem.Size = new System.Drawing.Size(145, 22);
             this.компонентыToolStripMenuItem.Text = "Компоненты";
             this.компонентыToolStripMenuItem.Click += new System.EventHandler(this.компонентыToolStripMenuItem_Click);
+            // 
+            // отчетыToolStripMenuItem
+            // 
+            this.отчетыToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.repairListToolStripMenuItem,
+            this.repairComponentsToolStripMenuItem,
+            this.ordersListToolStripMenuItem});
+            this.отчетыToolStripMenuItem.Name = "отчетыToolStripMenuItem";
+            this.отчетыToolStripMenuItem.Size = new System.Drawing.Size(60, 20);
+            this.отчетыToolStripMenuItem.Text = "Отчеты";
+            // 
+            // reinforcedListToolStripMenuItem
+            // 
+            this.repairListToolStripMenuItem.Name = "repairListToolStripMenuItem";
+            this.repairListToolStripMenuItem.Size = new System.Drawing.Size(204, 22);
+            this.repairListToolStripMenuItem.Text = "Список изделий";
+            this.repairListToolStripMenuItem.Click += new System.EventHandler(this.repairListToolStripMenuItem_Click);
+            // 
+            // repairComponentsToolStripMenuItem
+            // 
+            this.repairComponentsToolStripMenuItem.Name = "repairComponentsToolStripMenuItem";
+            this.repairComponentsToolStripMenuItem.Size = new System.Drawing.Size(204, 22);
+            this.repairComponentsToolStripMenuItem.Text = "Материалы по изделям";
+            this.repairComponentsToolStripMenuItem.Click += new System.EventHandler(this.repairComponentsToolStripMenuItem_Click);
+            // 
+            // ordersListToolStripMenuItem
+            // 
+            this.ordersListToolStripMenuItem.Name = "ordersListToolStripMenuItem";
+            this.ordersListToolStripMenuItem.Size = new System.Drawing.Size(204, 22);
+            this.ordersListToolStripMenuItem.Text = "Список заказов";
+            this.ordersListToolStripMenuItem.Click += new System.EventHandler(this.ordersListToolStripMenuItem_Click);
             // 
             // dataGridView
             // 
@@ -176,5 +212,9 @@ namespace AbstractCarRepairShopViev
         private System.Windows.Forms.Button ButtonOrderReady;
         private System.Windows.Forms.Button ButtonPayOrder;
         private System.Windows.Forms.Button ButtonRef;
+        private System.Windows.Forms.ToolStripMenuItem отчетыToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem repairListToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem repairComponentsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem ordersListToolStripMenuItem;
     }
 }
