@@ -26,7 +26,7 @@ namespace AbstractCarRepairShopFileImplement.Implements
             {
                 return null;
             }
-            return source.Orders.Where(rec => rec.RepairId.ToString().Contains(model.RepairId.ToString())).Select(CreateModel).ToList();
+            return source.Orders.Where((rec => rec.DateCreate >= model.DateFrom && rec.DateCreate <= model.DateTo)).Select(CreateModel).ToList();
         }
         public OrderViewModel GetElement(OrderBindingModel model)
         {
