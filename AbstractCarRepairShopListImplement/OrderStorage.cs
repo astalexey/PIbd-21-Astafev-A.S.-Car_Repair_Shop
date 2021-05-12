@@ -34,8 +34,11 @@ namespace AbstractCarRepairShopListImplement
             List<OrderViewModel> result = new List<OrderViewModel>();
             foreach (var order in source.Orders)
             {
-                if ((order.DateCreate >= model.DateFrom && order.DateCreate <= model.DateTo))
-                {
+                if (((model.ClientId.HasValue && order.ClientId == model.ClientId) ||
+                !model.DateFrom.HasValue && !model.DateTo.HasValue && order.DateCreate.Date == model.DateCreate.Date) ||
+                (model.DateFrom.HasValue && model.DateTo.HasValue && order.DateCreate.Date >= model.DateFrom.Value.Date
+                && order.DateCreate.Date <= model.DateTo.Value.Date))
+                    {
                     result.Add(CreateModel(order));
                 }
             }
@@ -98,6 +101,7 @@ namespace AbstractCarRepairShopListImplement
         }
         private Order CreateModel(OrderBindingModel model, Order order)
         {
+            order.ClientId = (int)model.ClientId;
             order.RepairId = model.RepairId;
             order.RepairName = source.Repairs.FirstOrDefault(x => x.Id == order.RepairId)?.RepairName;
             order.Count = model.Count;
@@ -113,6 +117,8 @@ namespace AbstractCarRepairShopListImplement
             return new OrderViewModel
             {
                 Id = order.Id,
+                ClientId = order.ClientId,
+                ClientFIO = source.Clients.FirstOrDefault(x => x.Id == order.ClientId)?.ClientFIO,
                 RepairId = order.RepairId,
                 RepairName = source.Repairs.FirstOrDefault(x => x.Id == order.RepairId)?.RepairName,
                 Count = order.Count,
