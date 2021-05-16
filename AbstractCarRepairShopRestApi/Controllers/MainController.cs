@@ -16,16 +16,16 @@ namespace AbstractCarRepairShopRestApi.Controllers
         private readonly OrderLogic _order;
         private readonly RepairLogic _repair;
         private readonly OrderLogic _main;
-        public MainController(OrderLogic order, RepairLogic product, OrderLogic main)
+        public MainController(OrderLogic order, RepairLogic repair, OrderLogic main)
         {
             _order = order;
-            _repair = product;
+            _repair = repair;
             _main = main;
         }
         [HttpGet]
-        public List<RepairViewModel> GetProductList() => _repair.Read(null)?.ToList();
+        public List<RepairViewModel> GetRepairList() => _repair.Read(null)?.ToList();
         [HttpGet]
-        public RepairViewModel GetProduct(int repairId) => _repair.Read(new RepairBindingModel
+        public RepairViewModel GetRepair(int repairId) => _repair.Read(new RepairBindingModel
         { Id = repairId })?[0];
         [HttpGet]
         public List<OrderViewModel> GetOrders(int clientId) => _order.Read(new OrderBindingModel

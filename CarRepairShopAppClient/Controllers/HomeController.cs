@@ -108,7 +108,7 @@ namespace CarRepairShopAppClient.Controllers
             return View();
         }
         [HttpPost]
-        public void Create(int reinforced, int count, decimal sum)
+        public void Create(int repair, int count, decimal sum)
         {
             if (count == 0 || sum == 0)
             {
@@ -117,7 +117,7 @@ namespace CarRepairShopAppClient.Controllers
             APIClient.PostRequest("api/main/createorder", new CreateOrderBindingModel
             {
                 ClientId = (int)Program.Client.Id,
-                RepairId = reinforced,
+                RepairId = repair,
                 Count = count,
                 Sum = sum
             });
@@ -126,8 +126,8 @@ namespace CarRepairShopAppClient.Controllers
         [HttpPost]
         public decimal Calc(decimal count, int repair)
         {
-            RepairViewModel reinf = APIClient.GetRequest<RepairViewModel>($"api/main/getrepair?repairId={repair}");
-            return count * reinf.Price;
+            RepairViewModel rep = APIClient.GetRequest<RepairViewModel>($"api/main/getrepair?repairId={repair}");
+            return count * rep.Price;
         }
     }
 }

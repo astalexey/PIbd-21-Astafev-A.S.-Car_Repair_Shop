@@ -10,7 +10,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace AbstractCarRepairShopDatabaseImplement.Migrations
 {
     [DbContext(typeof(AbstractCarShopDatabase))]
-    [Migration("20210511144414_InitialCreate")]
+    [Migration("20210516183301_InitialCreate")]
     partial class InitialCreate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
