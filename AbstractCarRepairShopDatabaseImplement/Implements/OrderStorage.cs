@@ -40,19 +40,19 @@ namespace AbstractCarRepairShopDatabaseImplement.Implements
             using (AbstractCarShopDatabase context = new AbstractCarShopDatabase())
             {
                 return context.Orders.Include(rec => rec.Repair)
-                .Where(rec => rec.RepairId == model.RepairId)
-                .Select(rec => new OrderViewModel
-                {
-                    Id = rec.Id,
-                    RepairId = rec.RepairId,
-                    RepairName = rec.Repair.RepairName,
-                    Count = rec.Count,
-                    Sum = rec.Sum,
-                    Status = rec.Status,
-                    DateCreate = rec.DateCreate,
-                    DateImplement = rec.DateImplement,
-                })
-                .ToList();
+                 .Where(rec => rec.DateCreate >= model.DateFrom && rec.DateCreate <= model.DateTo)
+                 .Select(rec => new OrderViewModel
+                 {
+                     Id = rec.Id,
+                     RepairId = rec.RepairId,
+                     RepairName = rec.Repair.RepairName,
+                     Count = rec.Count,
+                     Sum = rec.Sum,
+                     Status = rec.Status,
+                     DateCreate = rec.DateCreate,
+                     DateImplement = rec.DateImplement,
+                 })
+                 .ToList();
             }
         }
         public OrderViewModel GetElement(OrderBindingModel model)

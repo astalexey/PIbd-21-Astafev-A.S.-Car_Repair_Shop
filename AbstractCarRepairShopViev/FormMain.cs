@@ -14,16 +14,18 @@ using Unity;
 
 namespace AbstractCarRepairShopViev
 {
-    public partial class FormMain : Form
+    public partial class FormMain : Form 
     {
         [Dependency]
         public new IUnityContainer Container { get; set; }
         private readonly OrderLogic _orderLogic;
+        private readonly ReportLogic _report;
 
-        public FormMain(OrderLogic orderLogic)
+        public FormMain(OrderLogic orderLogic, ReportLogic reportLogic)
         {
             InitializeComponent();
             this._orderLogic = orderLogic;
+            this._report = reportLogic;
         }
         private void FormMain_Load(object sender, EventArgs e)
         {
@@ -55,6 +57,34 @@ namespace AbstractCarRepairShopViev
         private void ремонтToolStripMenuItem_Click(object sender, EventArgs e)
         {
             var form = Container.Resolve<FormRepairs>();
+            form.ShowDialog();
+        }
+
+        private void repairListToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            using (var dialog = new SaveFileDialog { Filter = "docx|*.docx" })
+            {
+                if (dialog.ShowDialog() == DialogResult.OK)
+                {
+                    _report.SaveRepairToWordFile(new ReportBindingModel
+                    {
+                        FileName = dialog.FileName
+                    });
+                    MessageBox.Show("Выполнено", "Успех", MessageBoxButtons.OK,
+                    MessageBoxIcon.Information);
+                }
+            }
+        }
+
+        private void repairComponentsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var form = Container.Resolve<FormReportRepairComponents>();
+            form.ShowDialog();
+        }
+
+        private void ordersListToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var form = Container.Resolve<FormReportOrders>();
             form.ShowDialog();
         }
         private void ButtonCreateOrder_Click(object sender, EventArgs e)
