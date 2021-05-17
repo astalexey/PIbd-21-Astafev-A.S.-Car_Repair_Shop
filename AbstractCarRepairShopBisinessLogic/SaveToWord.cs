@@ -32,7 +32,7 @@ namespace AbstractCarRepairShopBisinessLogic
                 {
                     docBody.AppendChild(CreateParagraph(new WordParagraph
                     {
-                        Texts = new List<(string, WordTextProperties)> {(component.RepairName, new WordTextProperties { Size = "24", }) },
+                        Texts = new List<(string, WordTextProperties)> {(component.RepairName+": ", new WordTextProperties { Bold = true, Size = "24", }), (component.Price.ToString() , new WordTextProperties { Size = "24", }) },
                         TextProperties = new WordTextProperties
                         {
                             Size = "24",

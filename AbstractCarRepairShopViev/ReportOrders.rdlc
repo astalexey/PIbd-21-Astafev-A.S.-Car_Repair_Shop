@@ -399,7 +399,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>=Fields!Status.Value</Value>
+                                  <Value>=System.Enum.GetName(First(Fields!Status.Value).GetType(), Fields!Status.Value)</Value>
                                   <Style />
                                 </TextRun>
                               </TextRuns>
@@ -407,6 +407,7 @@
                             </Paragraph>
                           </Paragraphs>
                           <rd:DefaultName>Status</rd:DefaultName>
+                          <ToolTip>=First(Fields!Status.Value, "DataSetOrders")</ToolTip>
                           <Style>
                             <Border>
                               <Color>LightGrey</Color>
@@ -418,6 +419,7 @@
                             <PaddingBottom>2pt</PaddingBottom>
                           </Style>
                         </Textbox>
+                        <rd:Selected>true</rd:Selected>
                       </CellContents>
                     </TablixCell>
                   </TablixCells>
