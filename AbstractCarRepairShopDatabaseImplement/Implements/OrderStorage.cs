@@ -1,4 +1,5 @@
 ﻿using AbstractCarRepairShopBisinessLogic.BindingModels;
+using AbstractCarRepairShopBisinessLogic.Enums;
 using AbstractCarRepairShopBisinessLogic.Interfaces;
 using AbstractCarRepairShopBisinessLogic.ViewModels;
 using AbstractCarRepairShopDatabaseImplement.Models;
@@ -16,12 +17,14 @@ namespace AbstractCarRepairShopDatabaseImplement.Implements
         {
             using (AbstractCarShopDatabase context = new AbstractCarShopDatabase())
             {
-                return context.Orders.Include(rec => rec.Repair).Include(rec => rec.Client)
+                return context.Orders.Include(rec => rec.Repair).Include(rec => rec.Client).Include(rec => rec.Implementer)
                 .Select(rec => new OrderViewModel
                 {
                     Id = rec.Id,
                     ClientId = rec.ClientId,
                     ClientFIO = rec.Client.ClientFIO,
+                    ImplementerId = rec.ImplementerId,
+                    ImplementerFIO = rec.Implementer.ImplementerFIO,
                     RepairId = rec.RepairId,
                     RepairName = rec.Repair.RepairName,
                     Count = rec.Count,
@@ -41,15 +44,19 @@ namespace AbstractCarRepairShopDatabaseImplement.Implements
             }
             using (AbstractCarShopDatabase context = new AbstractCarShopDatabase())
             {
-                return context.Orders.Include(rec => rec.Repair).Include(rec => rec.Client)
+                return context.Orders.Include(rec => rec.Repair).Include(rec => rec.Client).Include(rec => rec.Implementer)
                 .Where(rec => (!model.DateFrom.HasValue && !model.DateTo.HasValue && rec.DateCreate.Date == model.DateCreate.Date) ||
                 (model.DateFrom.HasValue && model.DateTo.HasValue && rec.DateCreate.Date >= model.DateFrom.Value.Date && rec.DateCreate.Date <= model.DateTo.Value.Date) ||
-                (model.ClientId.HasValue && rec.ClientId == model.ClientId))
+                (model.ClientId.HasValue && rec.ClientId == model.ClientId) ||
+                (model.FreeOrders.HasValue && model.FreeOrders.Value && rec.Status ==
+                OrderStatus.Принят) || (model.ImplementerId.HasValue && rec.ImplementerId == model.ImplementerId && rec.Status == OrderStatus.Выполняется))
                  .Select(rec => new OrderViewModel
                  {
                      Id = rec.Id,
                      ClientId = rec.ClientId,
                      ClientFIO = rec.Client.ClientFIO,
+                     ImplementerId = rec.ImplementerId,
+                     ImplementerFIO = rec.Implementer.ImplementerFIO,
                      RepairId = rec.RepairId,
                      RepairName = rec.Repair.RepairName,
                      Count = rec.Count,
@@ -69,7 +76,7 @@ namespace AbstractCarRepairShopDatabaseImplement.Implements
             }
             using (AbstractCarShopDatabase context = new AbstractCarShopDatabase())
             {
-                Order order = context.Orders.Include(rec => rec.Repair).Include(rec => rec.Client)
+                Order order = context.Orders.Include(rec => rec.Repair).Include(rec => rec.Client).Include(rec => rec.Implementer)
                 .FirstOrDefault(rec => rec.Id == model.Id);
                 return order != null ?
                 new OrderViewModel
@@ -77,13 +84,15 @@ namespace AbstractCarRepairShopDatabaseImplement.Implements
                     Id = order.Id,
                     ClientId = order.ClientId,
                     ClientFIO = order.Client.ClientFIO,
+                    ImplementerId = order.ImplementerId,
+                    ImplementerFIO = order.ImplementerId.HasValue ? order.Implementer.ImplementerFIO : string.Empty,
                     RepairId = order.RepairId,
                     RepairName = order.Repair.RepairName,
                     Count = order.Count,
                     Sum = order.Sum,
                     Status = order.Status,
                     DateCreate = order.DateCreate,
-                    DateImplement = order.DateImplement,
+                    DateImplement = order.DateImplement
                 } :
                 null;
             }
@@ -129,6 +138,7 @@ namespace AbstractCarRepairShopDatabaseImplement.Implements
         {
             order.ClientId = (int)model.ClientId;
             order.RepairId = model.RepairId;
+            order.ImplementerId = model.ImplementerId;
             order.Count = model.Count;
             order.Sum = model.Sum;
             order.Status = model.Status;

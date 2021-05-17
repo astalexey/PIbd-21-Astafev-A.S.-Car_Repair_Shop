@@ -156,6 +156,8 @@
   <ItemGroup>
     <Compile Include="Client.cs" />
     <Compile Include="ClientStorage.cs" />
+    <Compile Include="Implementer.cs" />
+    <Compile Include="ImplementerStorage.cs" />
     <Compile Include="OrderStorage.cs" />
     <Compile Include="RepairStorage.cs" />
     <Compile Include="ComponentStorage.cs" />

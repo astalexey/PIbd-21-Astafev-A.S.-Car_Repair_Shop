@@ -1,4 +1,5 @@
 ﻿using AbstractCarRepairShopBisinessLogic.BindingModels;
+using AbstractCarRepairShopBisinessLogic.Enums;
 using AbstractCarRepairShopBisinessLogic.Interfaces;
 using AbstractCarRepairShopBisinessLogic.ViewModels;
 using AbstractCarRepairShopFileImplement.Models;
@@ -26,10 +27,12 @@ namespace AbstractCarRepairShopFileImplement.Implements
             {
                 return null;
             }
-            return source.Orders.Where(rec => (!model.DateFrom.HasValue && !model.DateTo.HasValue &&
-            rec.DateCreate.Date == model.DateCreate.Date) || (model.DateFrom.HasValue && model.DateTo.HasValue && rec.DateCreate.Date
-            >= model.DateFrom.Value.Date && rec.DateCreate.Date <= model.DateTo.Value.Date) ||
-            (model.ClientId.HasValue && rec.ClientId == model.ClientId)).Select(CreateModel).ToList();
+            return source.Orders.Where(rec => (!model.DateFrom.HasValue && !model.DateTo.HasValue && rec.DateCreate.Date == model.DateCreate.Date)
+                    || (model.DateFrom.HasValue && model.DateTo.HasValue && rec.DateCreate.Date >= model.DateFrom.Value.Date && rec.DateCreate.Date <= model.DateTo.Value.Date)
+                    || (model.ClientId.HasValue && rec.ClientId == model.ClientId)
+                    || (model.FreeOrders.HasValue && model.FreeOrders.Value && !rec.ImplementerId.HasValue)
+                    || (model.ImplementerId.HasValue && rec.ImplementerId == model.ImplementerId && rec.Status == OrderStatus.Выполняется))
+            .Select(CreateModel).ToList();
         }
         public OrderViewModel GetElement(OrderBindingModel model)
         {
@@ -71,6 +74,7 @@ namespace AbstractCarRepairShopFileImplement.Implements
         {
             order.RepairId = model.RepairId;
             order.ClientId = (int)model.ClientId;
+            order.ImplementerId = model.ImplementerId;
             order.Count = model.Count;
             order.Sum = model.Sum;
             order.Status = model.Status;
@@ -83,6 +87,8 @@ namespace AbstractCarRepairShopFileImplement.Implements
             return new OrderViewModel
             {
                 Id = order.Id,
+                ImplementerId = order.ImplementerId,
+                ImplementerFIO = source.Implementers.FirstOrDefault(x => x.Id == order.ImplementerId)?.ImplementerFIO,
                 RepairId = order.RepairId,
                 RepairName = source.Repairs.FirstOrDefault(x => x.Id == order.RepairId)?.RepairName,
                 Count = order.Count,
