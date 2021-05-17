@@ -20,11 +20,13 @@ namespace AbstractCarRepairShopViev
         public new IUnityContainer Container { get; set; }
         private readonly RepairLogic _logicR;
         private readonly OrderLogic _logicO;
-        public FormCreateOrder(RepairLogic logicR, OrderLogic logicO)
+        private readonly ClientLogic _logicC;
+        public FormCreateOrder(RepairLogic logicR, OrderLogic logicO, ClientLogic logicC)
         {
             InitializeComponent();
             _logicR = logicR;
             _logicO = logicO;
+            _logicC = logicC;
         }
         private void FormCreateOrder_Load(object sender, EventArgs e)
         {
@@ -37,6 +39,14 @@ namespace AbstractCarRepairShopViev
                     comboBoxRepair.ValueMember = "Id";
                     comboBoxRepair.DataSource = list;
                     comboBoxRepair.SelectedItem = null;
+                }
+                var listClients = _logicC.Read(null);
+                foreach (var client in listClients)
+                {
+                    comboBoxClient.DataSource = listClients;
+                    comboBoxClient.DisplayMember = "ClientFIO";
+                    comboBoxClient.ValueMember = "Id";
+                    comboBoxClient.SelectedItem = null;
                 }
             }
             catch (Exception ex)
@@ -85,6 +95,7 @@ namespace AbstractCarRepairShopViev
             {
                 _logicO.CreateOrder(new CreateOrderBindingModel
                 {
+                    ClientId = Convert.ToInt32(comboBoxClient.SelectedValue),
                     RepairId = Convert.ToInt32(comboBoxRepair.SelectedValue),
                     Count = Convert.ToInt32(textBoxCount.Text),
                     Sum = Convert.ToDecimal(textBoxSum.Text)

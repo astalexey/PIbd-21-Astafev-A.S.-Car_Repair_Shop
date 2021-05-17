@@ -154,6 +154,8 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Client.cs" />
+    <Compile Include="ClientStorage.cs" />
     <Compile Include="OrderStorage.cs" />
     <Compile Include="RepairStorage.cs" />
     <Compile Include="ComponentStorage.cs" />

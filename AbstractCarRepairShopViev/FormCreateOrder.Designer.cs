@@ -37,6 +37,8 @@ namespace AbstractCarRepairShopViev
             this.comboBoxRepair = new System.Windows.Forms.ComboBox();
             this.ButtonSave = new System.Windows.Forms.Button();
             this.ButtonCancel = new System.Windows.Forms.Button();
+            this.ClientLabel = new System.Windows.Forms.Label();
+            this.comboBoxClient = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // label1
@@ -44,9 +46,10 @@ namespace AbstractCarRepairShopViev
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(12, 12);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(45, 13);
+            this.label1.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.label1.Size = new System.Drawing.Size(48, 13);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Ремонт";
+            this.label1.Text = "Ремонт:";
             // 
             // label2
             // 
@@ -80,7 +83,6 @@ namespace AbstractCarRepairShopViev
             this.textBoxSum.Name = "textBoxSum";
             this.textBoxSum.Size = new System.Drawing.Size(214, 20);
             this.textBoxSum.TabIndex = 4;
-            
             // 
             // comboBoxRepair
             // 
@@ -93,7 +95,7 @@ namespace AbstractCarRepairShopViev
             // 
             // ButtonSave
             // 
-            this.ButtonSave.Location = new System.Drawing.Point(122, 93);
+            this.ButtonSave.Location = new System.Drawing.Point(124, 120);
             this.ButtonSave.Name = "ButtonSave";
             this.ButtonSave.Size = new System.Drawing.Size(75, 23);
             this.ButtonSave.TabIndex = 6;
@@ -103,7 +105,7 @@ namespace AbstractCarRepairShopViev
             // 
             // ButtonCancel
             // 
-            this.ButtonCancel.Location = new System.Drawing.Point(203, 93);
+            this.ButtonCancel.Location = new System.Drawing.Point(204, 120);
             this.ButtonCancel.Name = "ButtonCancel";
             this.ButtonCancel.Size = new System.Drawing.Size(75, 23);
             this.ButtonCancel.TabIndex = 7;
@@ -111,11 +113,30 @@ namespace AbstractCarRepairShopViev
             this.ButtonCancel.UseVisualStyleBackColor = true;
             this.ButtonCancel.Click += new System.EventHandler(this.ButtonCancel_Click);
             // 
+            // ClientLabel
+            // 
+            this.ClientLabel.AutoSize = true;
+            this.ClientLabel.Location = new System.Drawing.Point(12, 96);
+            this.ClientLabel.Name = "ClientLabel";
+            this.ClientLabel.Size = new System.Drawing.Size(46, 13);
+            this.ClientLabel.TabIndex = 8;
+            this.ClientLabel.Text = "Клиент:";
+            // 
+            // comboBoxClient
+            // 
+            this.comboBoxClient.FormattingEnabled = true;
+            this.comboBoxClient.Location = new System.Drawing.Point(78, 90);
+            this.comboBoxClient.Name = "comboBoxClient";
+            this.comboBoxClient.Size = new System.Drawing.Size(214, 21);
+            this.comboBoxClient.TabIndex = 9;
+            // 
             // FormCreateOrder
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(304, 125);
+            this.ClientSize = new System.Drawing.Size(304, 155);
+            this.Controls.Add(this.comboBoxClient);
+            this.Controls.Add(this.ClientLabel);
             this.Controls.Add(this.ButtonCancel);
             this.Controls.Add(this.ButtonSave);
             this.Controls.Add(this.comboBoxRepair);
@@ -142,5 +163,7 @@ namespace AbstractCarRepairShopViev
         private System.Windows.Forms.ComboBox comboBoxRepair;
         private System.Windows.Forms.Button ButtonSave;
         private System.Windows.Forms.Button ButtonCancel;
+        private System.Windows.Forms.Label ClientLabel;
+        private System.Windows.Forms.ComboBox comboBoxClient;
     }
 }
