@@ -34,11 +34,12 @@ namespace AbstractCarRepairShopViev
             this.ремонтToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.компонентыToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.clientsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.implementersToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.отчетыToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.repairListToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.repairComponentsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ordersListToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.implementersToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.mailToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.startWorkToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.dataGridView = new System.Windows.Forms.DataGridView();
             this.ButtonCreateOrder = new System.Windows.Forms.Button();
@@ -56,7 +57,7 @@ namespace AbstractCarRepairShopViev
             this.startWorkToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(841, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(834, 24);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -74,30 +75,38 @@ namespace AbstractCarRepairShopViev
             // ремонтToolStripMenuItem
             // 
             this.ремонтToolStripMenuItem.Name = "ремонтToolStripMenuItem";
-            this.ремонтToolStripMenuItem.Size = new System.Drawing.Size(145, 22);
+            this.ремонтToolStripMenuItem.Size = new System.Drawing.Size(149, 22);
             this.ремонтToolStripMenuItem.Text = "Ремонт";
             this.ремонтToolStripMenuItem.Click += new System.EventHandler(this.ремонтToolStripMenuItem_Click);
             // 
             // компонентыToolStripMenuItem
             // 
             this.компонентыToolStripMenuItem.Name = "компонентыToolStripMenuItem";
-            this.компонентыToolStripMenuItem.Size = new System.Drawing.Size(145, 22);
+            this.компонентыToolStripMenuItem.Size = new System.Drawing.Size(149, 22);
             this.компонентыToolStripMenuItem.Text = "Компоненты";
             this.компонентыToolStripMenuItem.Click += new System.EventHandler(this.компонентыToolStripMenuItem_Click);
             // 
             // clientsToolStripMenuItem
             // 
             this.clientsToolStripMenuItem.Name = "clientsToolStripMenuItem";
-            this.clientsToolStripMenuItem.Size = new System.Drawing.Size(145, 22);
+            this.clientsToolStripMenuItem.Size = new System.Drawing.Size(149, 22);
             this.clientsToolStripMenuItem.Text = "Клиенты";
             this.clientsToolStripMenuItem.Click += new System.EventHandler(this.clientsToolStripMenuItem_Click);
+            // 
+            // implementersToolStripMenuItem
+            // 
+            this.implementersToolStripMenuItem.Name = "implementersToolStripMenuItem";
+            this.implementersToolStripMenuItem.Size = new System.Drawing.Size(149, 22);
+            this.implementersToolStripMenuItem.Text = "Исполнители";
+            this.implementersToolStripMenuItem.Click += new System.EventHandler(this.implementersToolStripMenuItem_Click);
             // 
             // отчетыToolStripMenuItem
             // 
             this.отчетыToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.repairListToolStripMenuItem,
             this.repairComponentsToolStripMenuItem,
-            this.ordersListToolStripMenuItem});
+            this.ordersListToolStripMenuItem,
+            this.mailToolStripMenuItem});
             this.отчетыToolStripMenuItem.Name = "отчетыToolStripMenuItem";
             this.отчетыToolStripMenuItem.Size = new System.Drawing.Size(60, 20);
             this.отчетыToolStripMenuItem.Text = "Отчеты";
@@ -123,12 +132,12 @@ namespace AbstractCarRepairShopViev
             this.ordersListToolStripMenuItem.Text = "Список заказов";
             this.ordersListToolStripMenuItem.Click += new System.EventHandler(this.ordersListToolStripMenuItem_Click);
             // 
-            // implementersToolStripMenuItem
+            // mailToolStripMenuItem
             // 
-            this.implementersToolStripMenuItem.Name = "implementersToolStripMenuItem";
-            this.implementersToolStripMenuItem.Size = new System.Drawing.Size(204, 22);
-            this.implementersToolStripMenuItem.Text = "Исполнители";
-            this.implementersToolStripMenuItem.Click += new System.EventHandler(this.implementersToolStripMenuItem_Click);
+            this.mailToolStripMenuItem.Name = "mailToolStripMenuItem";
+            this.mailToolStripMenuItem.Size = new System.Drawing.Size(204, 22);
+            this.mailToolStripMenuItem.Text = "Письма";
+            this.mailToolStripMenuItem.Click += new System.EventHandler(this.mailToolStripMenuItem_Click);
             // 
             // startWorkToolStripMenuItem
             // 
@@ -148,14 +157,14 @@ namespace AbstractCarRepairShopViev
             this.dataGridView.RowHeadersVisible = false;
             this.dataGridView.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
             this.dataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView.Size = new System.Drawing.Size(682, 368);
+            this.dataGridView.Size = new System.Drawing.Size(731, 368);
             this.dataGridView.TabIndex = 1;
             // 
             // ButtonCreateOrder
             // 
-            this.ButtonCreateOrder.Location = new System.Drawing.Point(698, 41);
+            this.ButtonCreateOrder.Location = new System.Drawing.Point(737, 41);
             this.ButtonCreateOrder.Name = "ButtonCreateOrder";
-            this.ButtonCreateOrder.Size = new System.Drawing.Size(131, 23);
+            this.ButtonCreateOrder.Size = new System.Drawing.Size(92, 23);
             this.ButtonCreateOrder.TabIndex = 2;
             this.ButtonCreateOrder.Text = "Создать заказ";
             this.ButtonCreateOrder.UseVisualStyleBackColor = true;
@@ -163,9 +172,9 @@ namespace AbstractCarRepairShopViev
             // 
             // ButtonPayOrder
             // 
-            this.ButtonPayOrder.Location = new System.Drawing.Point(698, 70);
+            this.ButtonPayOrder.Location = new System.Drawing.Point(737, 70);
             this.ButtonPayOrder.Name = "ButtonPayOrder";
-            this.ButtonPayOrder.Size = new System.Drawing.Size(131, 23);
+            this.ButtonPayOrder.Size = new System.Drawing.Size(92, 23);
             this.ButtonPayOrder.TabIndex = 5;
             this.ButtonPayOrder.Text = "Заказ оплачен";
             this.ButtonPayOrder.UseVisualStyleBackColor = true;
@@ -173,9 +182,9 @@ namespace AbstractCarRepairShopViev
             // 
             // ButtonRef
             // 
-            this.ButtonRef.Location = new System.Drawing.Point(698, 99);
+            this.ButtonRef.Location = new System.Drawing.Point(737, 99);
             this.ButtonRef.Name = "ButtonRef";
-            this.ButtonRef.Size = new System.Drawing.Size(131, 23);
+            this.ButtonRef.Size = new System.Drawing.Size(92, 23);
             this.ButtonRef.TabIndex = 6;
             this.ButtonRef.Text = "Обновить список";
             this.ButtonRef.UseVisualStyleBackColor = true;
@@ -185,7 +194,7 @@ namespace AbstractCarRepairShopViev
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(841, 402);
+            this.ClientSize = new System.Drawing.Size(834, 402);
             this.Controls.Add(this.ButtonRef);
             this.Controls.Add(this.ButtonPayOrder);
             this.Controls.Add(this.ButtonCreateOrder);
@@ -220,5 +229,6 @@ namespace AbstractCarRepairShopViev
         private System.Windows.Forms.ToolStripMenuItem clientsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem implementersToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem startWorkToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem mailToolStripMenuItem;
     }
 }

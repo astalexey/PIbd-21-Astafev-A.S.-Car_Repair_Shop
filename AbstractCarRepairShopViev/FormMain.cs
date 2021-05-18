@@ -100,6 +100,11 @@ namespace AbstractCarRepairShopViev
             _workModeling.DoWork();
             LoadData();
         }
+        private void mailToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var form = Container.Resolve<FormMail>();
+            form.ShowDialog();
+        }
 
         private void implementersToolStripMenuItem_Click(object sender, EventArgs e)
         {

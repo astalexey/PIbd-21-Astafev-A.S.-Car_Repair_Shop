@@ -65,6 +65,28 @@ namespace AbstractCarRepairShopDatabaseImplement.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "MessageInfos",
+                columns: table => new
+                {
+                    MessageId = table.Column<string>(nullable: false),
+                    ClientId = table.Column<int>(nullable: true),
+                    SenderName = table.Column<string>(nullable: true),
+                    DateDelivery = table.Column<DateTime>(nullable: false),
+                    Subject = table.Column<string>(nullable: true),
+                    Body = table.Column<string>(nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_MessageInfos", x => x.MessageId);
+                    table.ForeignKey(
+                        name: "FK_MessageInfos_Clients_ClientId",
+                        column: x => x.ClientId,
+                        principalTable: "Clients",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Restrict);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "Orders",
                 columns: table => new
                 {
@@ -130,6 +152,11 @@ namespace AbstractCarRepairShopDatabaseImplement.Migrations
                 });
 
             migrationBuilder.CreateIndex(
+                name: "IX_MessageInfos_ClientId",
+                table: "MessageInfos",
+                column: "ClientId");
+
+            migrationBuilder.CreateIndex(
                 name: "IX_Orders_ClientId",
                 table: "Orders",
                 column: "ClientId");
@@ -157,6 +184,9 @@ namespace AbstractCarRepairShopDatabaseImplement.Migrations
 
         protected override void Down(MigrationBuilder migrationBuilder)
         {
+            migrationBuilder.DropTable(
+                name: "MessageInfos");
+
             migrationBuilder.DropTable(
                 name: "Orders");
 

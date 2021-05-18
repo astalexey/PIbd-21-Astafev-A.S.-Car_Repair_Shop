@@ -10,7 +10,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace AbstractCarRepairShopDatabaseImplement.Migrations
 {
     [DbContext(typeof(AbstractCarShopDatabase))]
-    [Migration("20210516210358_InitialCreate")]
+    [Migration("20210518080057_InitialCreate")]
     partial class InitialCreate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -81,6 +81,33 @@ namespace AbstractCarRepairShopDatabaseImplement.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Implementers");
+                });
+
+            modelBuilder.Entity("AbstractCarRepairShopDatabaseImplement.Models.MessageInfo", b =>
+                {
+                    b.Property<string>("MessageId")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<string>("Body")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int?>("ClientId")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime>("DateDelivery")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("SenderName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Subject")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("MessageId");
+
+                    b.HasIndex("ClientId");
+
+                    b.ToTable("MessageInfos");
                 });
 
             modelBuilder.Entity("AbstractCarRepairShopDatabaseImplement.Models.Order", b =>
@@ -167,6 +194,13 @@ namespace AbstractCarRepairShopDatabaseImplement.Migrations
                     b.HasIndex("RepairId");
 
                     b.ToTable("RepairComponents");
+                });
+
+            modelBuilder.Entity("AbstractCarRepairShopDatabaseImplement.Models.MessageInfo", b =>
+                {
+                    b.HasOne("AbstractCarRepairShopDatabaseImplement.Models.Client", "Client")
+                        .WithMany("MessageInfos")
+                        .HasForeignKey("ClientId");
                 });
 
             modelBuilder.Entity("AbstractCarRepairShopDatabaseImplement.Models.Order", b =>
