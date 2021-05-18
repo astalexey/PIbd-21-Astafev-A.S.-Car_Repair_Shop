@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using AbstractCarRepairShopBisinessLogic.Attributes;
 using System.ComponentModel;
 using System.Linq;
 using System.Text;
@@ -12,8 +11,9 @@ namespace AbstractCarRepairShopBisinessLogic.ViewModels
     /// </summary>
     public class ComponentViewModel
     {
+        [Column(title: "Номер", width: 50)]
         public int Id { get; set; }
-        [DisplayName("Название компонента")]
+        [Column(title: "Наименование копмонента", gridViewAutoSize: GridViewAutoSize.Fill)]
         public string ComponentName { get; set; }
     }
 }
