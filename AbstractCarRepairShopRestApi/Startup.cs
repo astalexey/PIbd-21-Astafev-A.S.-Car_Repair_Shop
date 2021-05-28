@@ -1,4 +1,5 @@
 using AbstractCarRepairShopBisinessLogic.BusinessLogics;
+using AbstractCarRepairShopBisinessLogic.HelperModels;
 using AbstractCarRepairShopBisinessLogic.Interfaces;
 using AbstractCarRepairShopDatabaseImplement.Implements;
 using Microsoft.AspNetCore.Builder;
@@ -12,6 +13,7 @@ using Microsoft.Extensions.Logging;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace AbstractCarRepairShopRestApi
@@ -31,16 +33,31 @@ namespace AbstractCarRepairShopRestApi
             services.AddTransient<IClientStorage, ClientStorage>();
             services.AddTransient<IOrderStorage, OrderStorage>();
             services.AddTransient<IRepairStorage, RepairStorage>();
+            services.AddTransient<IMessageInfoStorage, MessageInfoStorage>();
             services.AddTransient<OrderLogic>();
             services.AddTransient<ClientLogic>();
             services.AddTransient<RepairLogic>();
+            services.AddTransient<MailLogic>();
             services.AddControllers().AddNewtonsoftJson();
-
+            MailLogic.MailConfig(new MailConfig
+            {
+                SmtpClientHost = Configuration["SmtpClientHost"],
+                SmtpClientPort = Convert.ToInt32(Configuration["SmtpClientPort"]),
+                MailLogin = Configuration["MailLogin"],
+                MailPassword = Configuration["MailPassword"],
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
+            var timer = new Timer(new TimerCallback(MailCheck), new MailCheckInfo
+            {
+                PopHost = Configuration["PopHost"],
+                PopPort = Convert.ToInt32(Configuration["PopPort"]),
+                Storage = new MessageInfoStorage(),
+                ClientStorage = new ClientStorage()
+            }, 0, 100000);
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
@@ -56,6 +73,10 @@ namespace AbstractCarRepairShopRestApi
             {
                 endpoints.MapControllers();
             });
+        }
+        private static void MailCheck(object obj)
+        {
+            MailLogic.MailCheck((MailCheckInfo)obj);
         }
     }
 }

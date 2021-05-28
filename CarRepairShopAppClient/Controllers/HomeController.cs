@@ -31,6 +31,14 @@ namespace CarRepairShopAppClient.Controllers
             }
             return View(Program.Client);
         }
+        public IActionResult Mail()
+        {
+            if (Program.Client == null)
+            {
+                return Redirect("~/Home/Enter");
+            }
+            return View(APIClient.GetRequest<List<MessageInfoViewModel>>($"api/client/getmessages?clientId={Program.Client.Id}"));
+        }
         [HttpPost]
         public void Privacy(string login, string password, string fio)
         {
