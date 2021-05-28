@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using AbstractCarRepairShopBisinessLogic.Attributes;
 using System.Linq;
 using System.Runtime.Serialization;
 using System.Text;
@@ -12,18 +13,19 @@ namespace AbstractCarRepairShopBisinessLogic.ViewModels
     public class ClientViewModel
     {
         [DataMember]
+        [Column(title: "Номер", width: 50)]
         public int Id { get; set; }
 
         [DataMember]
-        [DisplayName("ФИО клиента")]
+        [Column(title: "ФИО клиента", gridViewAutoSize: GridViewAutoSize.Fill)]
         public string ClientFIO { get; set; }
 
         [DataMember]
-        [DisplayName("Логин")]
+        [Column(title: "Логин", width: 100)]
         public string Email { get; set; }
 
         [DataMember]
-        [DisplayName("Пароль")]
+        [Column(title: "Пароль", width: 100)]
         public string Password { get; set; }
     }
 }

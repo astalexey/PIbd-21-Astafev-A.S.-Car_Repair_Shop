@@ -1,10 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.ComponentModel;
-using System.Linq;
 using System.Runtime.Serialization;
-using System.Text;
-using System.Threading.Tasks;
+using AbstractCarRepairShopBisinessLogic.Attributes;
 
 namespace AbstractCarRepairShopBisinessLogic.ViewModels
 {
@@ -15,12 +12,13 @@ namespace AbstractCarRepairShopBisinessLogic.ViewModels
     public class RepairViewModel
     {
         [DataMember]
+        [Column(title: "Номер", width: 50)]
         public int Id { get; set; }
         [DataMember]
-        [DisplayName("Название ремонта")]
+        [Column(title: "Название ремонта", gridViewAutoSize: GridViewAutoSize.Fill)]
         public string RepairName { get; set; }
         [DataMember]
-        [DisplayName("Цена")]
+        [Column(title: "Цена", width: 100)]
         public decimal Price { get; set; }
         [DataMember]
         public Dictionary<int, (string, int)> RepairComponents { get; set; }

@@ -29,26 +29,26 @@ namespace AbstractCarRepairShopViev
         /// </summary>
         private void InitializeComponent()
         {
-            this.dataGridView = new System.Windows.Forms.DataGridView();
+            this.dataRepairsGridView = new System.Windows.Forms.DataGridView();
             this.ButtonAdd = new System.Windows.Forms.Button();
             this.ButtonUpd = new System.Windows.Forms.Button();
             this.ButtonDel = new System.Windows.Forms.Button();
             this.ButtonRef = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataRepairsGridView)).BeginInit();
             this.SuspendLayout();
             // 
-            // dataGridView
+            // dataRepairsGridView
             // 
-            this.dataGridView.AllowUserToAddRows = false;
-            this.dataGridView.AllowUserToDeleteRows = false;
-            this.dataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView.Location = new System.Drawing.Point(2, 2);
-            this.dataGridView.Name = "dataGridView";
-            this.dataGridView.ReadOnly = true;
-            this.dataGridView.RowHeadersVisible = false;
-            this.dataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView.Size = new System.Drawing.Size(499, 360);
-            this.dataGridView.TabIndex = 0;
+            this.dataRepairsGridView.AllowUserToAddRows = false;
+            this.dataRepairsGridView.AllowUserToDeleteRows = false;
+            this.dataRepairsGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataRepairsGridView.Location = new System.Drawing.Point(2, 2);
+            this.dataRepairsGridView.Name = "dataRepairsGridView";
+            this.dataRepairsGridView.ReadOnly = true;
+            this.dataRepairsGridView.RowHeadersVisible = false;
+            this.dataRepairsGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataRepairsGridView.Size = new System.Drawing.Size(499, 360);
+            this.dataRepairsGridView.TabIndex = 0;
             // 
             // ButtonAdd
             // 
@@ -99,18 +99,18 @@ namespace AbstractCarRepairShopViev
             this.Controls.Add(this.ButtonDel);
             this.Controls.Add(this.ButtonUpd);
             this.Controls.Add(this.ButtonAdd);
-            this.Controls.Add(this.dataGridView);
+            this.Controls.Add(this.dataRepairsGridView);
             this.Name = "FormRepairs";
             this.Text = "Список ремонтов";
             this.Load += new System.EventHandler(this.FormRepairs_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataRepairsGridView)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.DataGridView dataGridView;
+        private System.Windows.Forms.DataGridView dataRepairsGridView;
         private System.Windows.Forms.Button ButtonAdd;
         private System.Windows.Forms.Button ButtonUpd;
         private System.Windows.Forms.Button ButtonDel;

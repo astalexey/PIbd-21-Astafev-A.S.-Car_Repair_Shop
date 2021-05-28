@@ -41,6 +41,7 @@ namespace AbstractCarRepairShopViev
             this.ordersListToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mailToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.startWorkToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.createBackUpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.dataGridView = new System.Windows.Forms.DataGridView();
             this.ButtonCreateOrder = new System.Windows.Forms.Button();
             this.ButtonPayOrder = new System.Windows.Forms.Button();
@@ -54,7 +55,8 @@ namespace AbstractCarRepairShopViev
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.справочникиToolStripMenuItem,
             this.отчетыToolStripMenuItem,
-            this.startWorkToolStripMenuItem});
+            this.startWorkToolStripMenuItem,
+            this.createBackUpToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(834, 24);
@@ -145,7 +147,7 @@ namespace AbstractCarRepairShopViev
             this.startWorkToolStripMenuItem.Size = new System.Drawing.Size(92, 20);
             this.startWorkToolStripMenuItem.Text = "Запуск работ";
             this.startWorkToolStripMenuItem.Click += new System.EventHandler(this.startWorkToolStripMenuItem_Click);
-            // 
+            //
             // dataGridView
             // 
             this.dataGridView.AllowUserToAddRows = false;
@@ -189,6 +191,13 @@ namespace AbstractCarRepairShopViev
             this.ButtonRef.Text = "Обновить список";
             this.ButtonRef.UseVisualStyleBackColor = true;
             this.ButtonRef.Click += new System.EventHandler(this.ButtonRef_Click);
+            //
+            // createBackUpToolStripMenuItem
+            // 
+            this.createBackUpToolStripMenuItem.Name = "createBackUpToolStripMenuItem";
+            this.createBackUpToolStripMenuItem.Size = new System.Drawing.Size(97, 20);
+            this.createBackUpToolStripMenuItem.Text = "Создать бекап";
+            this.createBackUpToolStripMenuItem.Click += new System.EventHandler(this.createBackUpToolStripMenuItem_Click);
             // 
             // FormMain
             // 
@@ -230,5 +239,6 @@ namespace AbstractCarRepairShopViev
         private System.Windows.Forms.ToolStripMenuItem implementersToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem startWorkToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem mailToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem createBackUpToolStripMenuItem;
     }
 }

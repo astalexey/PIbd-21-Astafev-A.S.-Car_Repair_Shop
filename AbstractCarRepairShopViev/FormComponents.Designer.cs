@@ -33,8 +33,8 @@ namespace AbstractCarRepairShopViev
             this.ButtonUpd = new System.Windows.Forms.Button();
             this.ButtonDel = new System.Windows.Forms.Button();
             this.buttonRef = new System.Windows.Forms.Button();
-            this.dataGridView = new System.Windows.Forms.DataGridView();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
+            this.dataComponentsGridView = new System.Windows.Forms.DataGridView();
+            ((System.ComponentModel.ISupportInitialize)(this.dataComponentsGridView)).BeginInit();
             this.SuspendLayout();
             // 
             // ButtonAdd
@@ -77,18 +77,18 @@ namespace AbstractCarRepairShopViev
             this.buttonRef.UseVisualStyleBackColor = true;
             this.buttonRef.Click += new System.EventHandler(this.ButtonRef_Click);
             // 
-            // dataGridView
+            // dataComponentsGridView
             // 
-            this.dataGridView.AllowUserToAddRows = false;
-            this.dataGridView.AllowUserToDeleteRows = false;
-            this.dataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView.Location = new System.Drawing.Point(1, 0);
-            this.dataGridView.Name = "dataGridView";
-            this.dataGridView.ReadOnly = true;
-            this.dataGridView.RowHeadersVisible = false;
-            this.dataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView.Size = new System.Drawing.Size(444, 357);
-            this.dataGridView.TabIndex = 4;
+            this.dataComponentsGridView.AllowUserToAddRows = false;
+            this.dataComponentsGridView.AllowUserToDeleteRows = false;
+            this.dataComponentsGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataComponentsGridView.Location = new System.Drawing.Point(1, 0);
+            this.dataComponentsGridView.Name = "dataComponentsGridView";
+            this.dataComponentsGridView.ReadOnly = true;
+            this.dataComponentsGridView.RowHeadersVisible = false;
+            this.dataComponentsGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataComponentsGridView.Size = new System.Drawing.Size(444, 357);
+            this.dataComponentsGridView.TabIndex = 4;
             // 
             // FormComponents
             // 
@@ -96,7 +96,7 @@ namespace AbstractCarRepairShopViev
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.ClientSize = new System.Drawing.Size(577, 357);
-            this.Controls.Add(this.dataGridView);
+            this.Controls.Add(this.dataComponentsGridView);
             this.Controls.Add(this.buttonRef);
             this.Controls.Add(this.ButtonDel);
             this.Controls.Add(this.ButtonUpd);
@@ -105,7 +105,7 @@ namespace AbstractCarRepairShopViev
             this.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.Text = "Компоненты";
             this.Load += new System.EventHandler(this.FormComponents_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataComponentsGridView)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -116,6 +116,6 @@ namespace AbstractCarRepairShopViev
         private System.Windows.Forms.Button ButtonUpd;
         private System.Windows.Forms.Button ButtonDel;
         private System.Windows.Forms.Button buttonRef;
-        private System.Windows.Forms.DataGridView dataGridView;
+        private System.Windows.Forms.DataGridView dataComponentsGridView;
     }
 }
