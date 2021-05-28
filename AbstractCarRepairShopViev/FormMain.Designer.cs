@@ -38,10 +38,10 @@ namespace AbstractCarRepairShopViev
             this.repairListToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.repairComponentsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ordersListToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.implementersToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.startWorkToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.dataGridView = new System.Windows.Forms.DataGridView();
             this.ButtonCreateOrder = new System.Windows.Forms.Button();
-            this.ButtonTakeOrderInWork = new System.Windows.Forms.Button();
-            this.ButtonOrderReady = new System.Windows.Forms.Button();
             this.ButtonPayOrder = new System.Windows.Forms.Button();
             this.ButtonRef = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
@@ -52,7 +52,8 @@ namespace AbstractCarRepairShopViev
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.справочникиToolStripMenuItem,
-            this.отчетыToolStripMenuItem});
+            this.отчетыToolStripMenuItem,
+            this.startWorkToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(841, 24);
@@ -64,7 +65,8 @@ namespace AbstractCarRepairShopViev
             this.справочникиToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.ремонтToolStripMenuItem,
             this.компонентыToolStripMenuItem,
-            this.clientsToolStripMenuItem});
+            this.clientsToolStripMenuItem,
+            this.implementersToolStripMenuItem});
             this.справочникиToolStripMenuItem.Name = "справочникиToolStripMenuItem";
             this.справочникиToolStripMenuItem.Size = new System.Drawing.Size(94, 20);
             this.справочникиToolStripMenuItem.Text = "Справочники";
@@ -121,6 +123,20 @@ namespace AbstractCarRepairShopViev
             this.ordersListToolStripMenuItem.Text = "Список заказов";
             this.ordersListToolStripMenuItem.Click += new System.EventHandler(this.ordersListToolStripMenuItem_Click);
             // 
+            // implementersToolStripMenuItem
+            // 
+            this.implementersToolStripMenuItem.Name = "implementersToolStripMenuItem";
+            this.implementersToolStripMenuItem.Size = new System.Drawing.Size(204, 22);
+            this.implementersToolStripMenuItem.Text = "Исполнители";
+            this.implementersToolStripMenuItem.Click += new System.EventHandler(this.implementersToolStripMenuItem_Click);
+            // 
+            // startWorkToolStripMenuItem
+            // 
+            this.startWorkToolStripMenuItem.Name = "startWorkToolStripMenuItem";
+            this.startWorkToolStripMenuItem.Size = new System.Drawing.Size(92, 20);
+            this.startWorkToolStripMenuItem.Text = "Запуск работ";
+            this.startWorkToolStripMenuItem.Click += new System.EventHandler(this.startWorkToolStripMenuItem_Click);
+            // 
             // dataGridView
             // 
             this.dataGridView.AllowUserToAddRows = false;
@@ -145,29 +161,9 @@ namespace AbstractCarRepairShopViev
             this.ButtonCreateOrder.UseVisualStyleBackColor = true;
             this.ButtonCreateOrder.Click += new System.EventHandler(this.ButtonCreateOrder_Click);
             // 
-            // ButtonTakeOrderInWork
-            // 
-            this.ButtonTakeOrderInWork.Location = new System.Drawing.Point(698, 70);
-            this.ButtonTakeOrderInWork.Name = "ButtonTakeOrderInWork";
-            this.ButtonTakeOrderInWork.Size = new System.Drawing.Size(131, 23);
-            this.ButtonTakeOrderInWork.TabIndex = 3;
-            this.ButtonTakeOrderInWork.Text = "Отдать на выполнение";
-            this.ButtonTakeOrderInWork.UseVisualStyleBackColor = true;
-            this.ButtonTakeOrderInWork.Click += new System.EventHandler(this.ButtonTakeOrderInWork_Click);
-            // 
-            // ButtonOrderReady
-            // 
-            this.ButtonOrderReady.Location = new System.Drawing.Point(698, 99);
-            this.ButtonOrderReady.Name = "ButtonOrderReady";
-            this.ButtonOrderReady.Size = new System.Drawing.Size(131, 23);
-            this.ButtonOrderReady.TabIndex = 4;
-            this.ButtonOrderReady.Text = "Заказ готов";
-            this.ButtonOrderReady.UseVisualStyleBackColor = true;
-            this.ButtonOrderReady.Click += new System.EventHandler(this.ButtonOrderReady_Click);
-            // 
             // ButtonPayOrder
             // 
-            this.ButtonPayOrder.Location = new System.Drawing.Point(698, 128);
+            this.ButtonPayOrder.Location = new System.Drawing.Point(698, 70);
             this.ButtonPayOrder.Name = "ButtonPayOrder";
             this.ButtonPayOrder.Size = new System.Drawing.Size(131, 23);
             this.ButtonPayOrder.TabIndex = 5;
@@ -177,7 +173,7 @@ namespace AbstractCarRepairShopViev
             // 
             // ButtonRef
             // 
-            this.ButtonRef.Location = new System.Drawing.Point(698, 157);
+            this.ButtonRef.Location = new System.Drawing.Point(698, 99);
             this.ButtonRef.Name = "ButtonRef";
             this.ButtonRef.Size = new System.Drawing.Size(131, 23);
             this.ButtonRef.TabIndex = 6;
@@ -192,8 +188,6 @@ namespace AbstractCarRepairShopViev
             this.ClientSize = new System.Drawing.Size(841, 402);
             this.Controls.Add(this.ButtonRef);
             this.Controls.Add(this.ButtonPayOrder);
-            this.Controls.Add(this.ButtonOrderReady);
-            this.Controls.Add(this.ButtonTakeOrderInWork);
             this.Controls.Add(this.ButtonCreateOrder);
             this.Controls.Add(this.dataGridView);
             this.Controls.Add(this.menuStrip1);
@@ -217,8 +211,6 @@ namespace AbstractCarRepairShopViev
         private System.Windows.Forms.ToolStripMenuItem компонентыToolStripMenuItem;
         private System.Windows.Forms.DataGridView dataGridView;
         private System.Windows.Forms.Button ButtonCreateOrder;
-        private System.Windows.Forms.Button ButtonTakeOrderInWork;
-        private System.Windows.Forms.Button ButtonOrderReady;
         private System.Windows.Forms.Button ButtonPayOrder;
         private System.Windows.Forms.Button ButtonRef;
         private System.Windows.Forms.ToolStripMenuItem отчетыToolStripMenuItem;
@@ -226,5 +218,7 @@ namespace AbstractCarRepairShopViev
         private System.Windows.Forms.ToolStripMenuItem repairComponentsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem ordersListToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem clientsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem implementersToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem startWorkToolStripMenuItem;
     }
 }
